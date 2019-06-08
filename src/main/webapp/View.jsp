@@ -24,8 +24,8 @@
 </tr>
 <%
 Class.forName("com.mysql.jdbc.Driver");
-Connection co=DriverManager.getConnection("jdbc:mysql://localhost:3306/spark",
-		"root", "abcd");
+Connection co=DriverManager.getConnection("https://node28451-aabhas.mj.milesweb.cloud",
+		"root", "b4WWim1COm");
 Statement st=co.createStatement();
 int i=Integer.parseInt(request.getParameter("u"));
 ResultSet r=st.executeQuery("select * from user where id="+i);
