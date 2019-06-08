@@ -28,7 +28,7 @@ Connection co=DriverManager.getConnection("jdbc:mysql://node28451-aabhas.mj.mile
 		"root", "b4WWim1COm");
 Statement st=co.createStatement();
 int i=Integer.parseInt(request.getParameter("u"));
-ResultSet r=st.executeQuery("select * from user where id="+i);
+ResultSet r=st.executeQuery("select * from spark where id="+i);
 int credit=0;
 String id="";
 while(r.next())
