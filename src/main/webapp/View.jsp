@@ -24,7 +24,7 @@
 </tr>
 <%
 Class.forName("com.mysql.jdbc.Driver");
-Connection co=DriverManager.getConnection("https://node28451-aabhas.mj.milesweb.cloud",
+Connection co=DriverManager.getConnection("https://node28451-aabhas.mj.milesweb.cloud/usser",
 		"root", "b4WWim1COm");
 Statement st=co.createStatement();
 int i=Integer.parseInt(request.getParameter("u"));
