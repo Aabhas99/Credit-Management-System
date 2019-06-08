@@ -42,23 +42,23 @@ if(first!=null)
 {
 	int firstid=Integer.parseInt(first);
 	int secondid=Integer.parseInt(second);
-	ResultSet rr=st.executeQuery("select credits from user where id="+secondid);
+	ResultSet rr=st.executeQuery("select credits from spark where id="+secondid);
 	rr.next();
 	int cr=rr.getInt(1)+Integer.parseInt(amount);
-	st.executeUpdate("update user set credits="+cr+" where id="+secondid);
+	st.executeUpdate("update spark set credits="+cr+" where id="+secondid);
 	
-	rr=st.executeQuery("select credits from user where id="+firstid);
+	rr=st.executeQuery("select credits from spark where id="+firstid);
 	rr.next();
 	int cr2=rr.getInt(1)-Integer.parseInt(amount);
-	st.executeUpdate("update user set credits="+cr2+" where id="+firstid);
+	st.executeUpdate("update spark set credits="+cr2+" where id="+firstid);
 	//response.sendRedirect("View_All_Users.jsp");
 	%>
 	<h1>Transfer Done!!!</h1>
 	<%
-	response.setHeader("Refresh", "1; URL=http://localhost:8888//aabhas99//View_All_Users.jsp");
+	response.setHeader("Refresh", "1; View_All_Users.jsp");
 	//return;
 }
-ResultSet r=st.executeQuery("select * from user");
+ResultSet r=st.executeQuery("select * from spark");
 int i=0;
 while(r.next())
 {
