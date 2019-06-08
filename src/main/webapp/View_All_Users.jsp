@@ -34,7 +34,7 @@ String second=(request.getParameter("second1"));
 
 
 Class.forName("com.mysql.jdbc.Driver");
-Connection co=DriverManager.getConnection("https://node28451-aabhas.mj.milesweb.cloud/usser",
+Connection co=DriverManager.getConnection("jdbc:mysql://node28451-aabhas.mj.milesweb.cloud/usser",
 		"root", "b4WWim1COm");
 Statement st=co.createStatement();
 
