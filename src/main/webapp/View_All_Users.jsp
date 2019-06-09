@@ -77,7 +77,7 @@ else
 	<th > Select </th>
 </tr>
 <%
-ResultSet r=st.executeQuery("select * from user");
+ResultSet r=st.executeQuery("select * from spark");
 int i=0;
 while(r.next())
 {
