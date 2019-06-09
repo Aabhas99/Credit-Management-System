@@ -1,0 +1,31 @@
+body
+{	
+	background: #74ebd5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  	
+}
+p {
+  color: white;
+  text-shadow: 5px 5px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  transition:1000ms;
+}
+p:hover
+{
+	color: blue;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+a {
+    font-weight: bold;
+    transition: 1000ms;
+    font-size:30px
+}
+    
+a:hover {
+    font-size:40px;
+    color:white;
+    
+    text-shadow: 5px 5px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    
+}
