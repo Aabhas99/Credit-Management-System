@@ -3,19 +3,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style>
-	td,tr,th
-	{
-		padding:20px;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="css/mystyle_View.css">
+<link rel="icon" href="logo.jpg">
+<title>
+	User Details
+</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 
 <center>
-<table border="1" style="width:100%;">
+
+<p>
+User Details
+</p>
+
+<table id="customers">
 <tr>
 	<th > Name </th>
 	<th > Email </th>
@@ -34,13 +39,13 @@ String id="";
 while(r.next())
 {
 	%>
-	<tr style="width:100%">
+	<tr>
 	<%id= ""+r.getInt(1);%>
-	<th > <%=r.getString(2)%> </th>
-	<th > <%=r.getString(3)%> </th>
+	<td > <%=r.getString(2)%> </td>
+	<td > <%=r.getString(3)%> </td>
 	<%credit= r.getInt(4);%>
-	<th > <%=r.getInt(4)%> </th>
-	<th > <%=r.getString(5)%> </th>
+	<td > <%=r.getInt(4)%> </td>
+	<td > <%=r.getString(5)%> </td>
 </tr>
 	<%
 }
@@ -50,14 +55,16 @@ co.close();
 
 <br>
 <br>
+<br>
+<br>
 <form action="View_All_Users.jsp">
-	<input  style="width:300px" type="number" name="credit" min="1" max="<%=credit%>"
-	 placeholder="Enter the credits"><br><br>
+	<input id="input" style="width:300px" type="number" name="credit" min="1" max="<%=credit%>"
+	 placeholder="Enter the credits" required><br><br><br>
 
-	<input type="text" name ="first" value="<%=id%>" hidden><br><br>
+	<input type="text" name ="first" value="<%=id%>" hidden><br>
 
 	
-	<input type="submit" value="Transfer Credits">
+	<input id="submit" type="submit" value="Transfer Credits">
 </form>
 
 </center>
