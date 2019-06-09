@@ -5,6 +5,10 @@
 <head>
 <head>
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link rel="icon" href="logo.jpg" type="image/gif" sizes="16x16">
+<title>
+	Active Users
+</title>
 </head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
