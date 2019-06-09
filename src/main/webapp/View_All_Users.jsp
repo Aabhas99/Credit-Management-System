@@ -3,28 +3,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style>
-	td,tr,th
-	{
-		padding:20px;
-	}
-</style>
+<head>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-
-<br>
 <center>
-<table border="1" >
-<tr>
-	<th > Sr.No </th>
-	<th > Name </th>
-	<th > Credits </th>
-	<th > Select </th>
-</tr>
 <%
 String cred=request.getParameter("credit");
+
 String id=(request.getParameter("first"));
 
 
@@ -53,12 +43,37 @@ if(first!=null)
 	st.executeUpdate("update spark set credits="+cr2+" where id="+firstid);
 	//response.sendRedirect("View_All_Users.jsp");
 	%>
-	<h1>Transfer Done!!!</h1>
+	<p>Transfer Done!!!</p>
 	<%
 	response.setHeader("Refresh", "1; View_All_Users.jsp");
 	//return;
 }
-ResultSet r=st.executeQuery("select * from spark");
+if(cred==null)
+{
+%>
+	<p>
+	Active Users
+	</p>
+<% 
+}
+else
+{
+%>
+	<p>
+	Select The Second User
+	</p>
+<%
+}
+%>
+<table id="customers" >
+<tr>
+	<th > Sr.No </th>
+	<th > Name </th>
+	<th > Credits </th>
+	<th > Select </th>
+</tr>
+<%
+ResultSet r=st.executeQuery("select * from user");
 int i=0;
 while(r.next())
 {
@@ -80,7 +95,7 @@ while(r.next())
 			</td>
 			
 			<td>
-				<a href="View.jsp?u=<%=i%>">Select</a>
+				<a style="text-decoration:none" href="View.jsp?u=<%=i%>">Select and View</a>
 			</td>
 			
 		</tr>
